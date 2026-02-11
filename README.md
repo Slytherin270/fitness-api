@@ -15,6 +15,7 @@
 - Example event collaboration implemented:
   - `workout` publishes `WorkoutCompletedEvent`
   - `notification` consumes event using `@ApplicationModuleListener`
+  - `progress` consumes event and aggregates user training metrics
 
 ## Production concerns
 
@@ -26,6 +27,7 @@
 - Basic rate-limiting filter (IP-based)
 - PostgreSQL indexing strategy (see migration)
 - OpenAPI docs via springdoc
+- Progress API (`GET /api/progress/me`) for per-user workout totals, volume, and PR count
 
 ## TDD workflow example
 

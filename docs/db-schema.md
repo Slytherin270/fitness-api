@@ -6,6 +6,7 @@
 - `workout_exercises`: child records attached to workouts.
 - `workout_sets`: immutable-ish lifting/training facts for reps and weight.
 - `exercises`: catalog with public/private visibility and categorization.
+- `user_progress`: aggregated training stats per user, updated asynchronously from workout completion events.
 
 ## Index strategy
 
@@ -17,3 +18,8 @@
 
 - `created_at` / `updated_at` auditing fields.
 - `version` column in `workouts` for optimistic locking.
+
+
+## Additional progress table
+
+- `user_progress` stores `total_workouts`, `total_volume`, `personal_records`, and `last_completed_at` for fast dashboard retrieval.
